@@ -23,8 +23,8 @@ const reviewRoutes = require('./routes/reviews');
 
 const MongoStore = require('connect-mongo')
 
-
-const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
+// process.env.DB_URL ||
+const dbUrl = 'mongodb://localhost:27017/yelp-camp';
 
 mongoose.connect(dbUrl);
 
@@ -138,8 +138,9 @@ app.use((req, res, next) => {
 })
 
 
-app.use('/', userRoutes);
+
 app.use('/campgrounds', campgroundRoutes)
+app.use('/', userRoutes);
 app.use('/campgrounds/:id/reviews', reviewRoutes)
 
 

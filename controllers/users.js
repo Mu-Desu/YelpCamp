@@ -34,6 +34,12 @@ module.exports.login = (req, res) => {
     res.redirect(returnTo);
 }
 
+module.exports.rednerProfile = async (req, res) => {
+    const name = req.params.profile;
+    const user = await User.findOne({ username: name });
+    res.render("users/profile", { user });
+}
+
 module.exports.logout = (req, res) => {
     req.logout((err) => {
         if (err) { return next(err); }

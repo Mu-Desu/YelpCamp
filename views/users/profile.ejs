@@ -1,0 +1,20 @@
+<% layout('layout/boilerplate') %>
+    <div class="container d-flex justify-content-center align-items-center mt-5">
+        <div class="row">
+            <div class="card">
+                <div class="card text-center">
+                    <img class="rounded card-img-top"
+                        src="https://i.pinimg.com/236x/87/d6/30/87d630382d8ace21f868d753ca622a89.jpg" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title ms-auto">Your Profile</h5>
+                        <h1 class="card-text">
+                            <%= user.username %>
+                        </h1>
+                        <h1 class="card-text">
+                            <%= user.email %>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
